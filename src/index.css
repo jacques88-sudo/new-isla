@@ -1,7 +1,7 @@
 :root {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: var(--ocean);
-  background: var(--salt);
+  color: var(--ink);
+  background: var(--bg);
   line-height: 1.5;
   font-weight: 400;
 }
@@ -18,7 +18,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(180deg, var(--salt) 0%, #fbf3e6 100%);
+  background: linear-gradient(180deg, #ece3d4 0%, var(--bg) 100%);
 }
 
 a {
@@ -48,21 +48,25 @@ button {
 
 :root {
   /* Isla palette */
-  --salt: #ffffff;
-  --sand: #f4e6cc;
-  --sea: #9ad9ea;
-  --ocean: #1f3a5f;
-  --coral: #ff6f61;
-  --mint: #a6e8bb;
+  --bg: #e4d9c7;        /* sfondo principale */
+  --surface: #f4f0e8;   /* pannelli e schede */
+  --surface-2: #c9b9a5; /* sezioni secondarie */
+  --natural: #8faeab;   /* elementi naturali e superfici */
+  --detail: #5f9ea3;    /* pulsanti o dettagli */
+  --heading: #426f7b;   /* testo forte e intestazioni */
+  --neutral: #82989a;   /* elementi neutri */
+  --accent: #b59d9a;    /* accenti delicati */
+  --light: #f4f0e8;     /* testo su sfondi scuri */
 
-  /* Derived from Blu Oceano, so lines and muted text stay in family. */
-  --ocean-muted: rgba(31, 58, 95, 0.66);
-  --ocean-faint: rgba(31, 58, 95, 0.45);
-  --line: rgba(31, 58, 95, 0.16);
-  --shadow: rgba(31, 58, 95, 0.12);
+  /* #426F7B reaches only 3.9:1 on the sand background, so body copy uses a
+     darker shade of it (6.3:1) and #426F7B stays on headings and buttons. */
+  --ink: #2c4a52;
+  --ink-muted: rgba(44, 74, 82, 0.72);
+  --line: rgba(66, 111, 123, 0.22);
+  --shadow: rgba(44, 74, 82, 0.14);
 
-  --postcard-paper: var(--sand);
-  --postcard-ink: var(--ocean);
+  --postcard-paper: var(--bg);
+  --postcard-ink: var(--ink);
   --handwriting: 'Caveat', 'Segoe Script', 'Bradley Hand', cursive;
 }
 
@@ -88,8 +92,8 @@ button {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: var(--sea);
-  color: var(--ocean);
+  background: var(--detail);
+  color: var(--light);
 }
 
 .brand-name,
@@ -105,14 +109,14 @@ button {
 }
 
 .brand-subtitle {
-  color: var(--ocean-muted);
+  color: var(--ink-muted);
   font-size: 14px;
 }
 
 .main-nav {
   display: flex;
   gap: 18px;
-  color: var(--ocean);
+  color: var(--heading);
   font-weight: 600;
 }
 
@@ -120,7 +124,7 @@ button {
 .search-panel,
 .featured-section,
 .site-footer {
-  background: var(--salt);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 28px;
   box-shadow: 0 20px 60px var(--shadow);
@@ -135,7 +139,7 @@ button {
 }
 
 .eyebrow {
-  color: var(--coral);
+  color: var(--heading);
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
@@ -157,7 +161,7 @@ button {
   margin: 18px 0 0;
   max-width: 56ch;
   font-size: 18px;
-  color: var(--ocean-muted);
+  color: var(--ink-muted);
 }
 
 
@@ -169,15 +173,15 @@ button {
   font-weight: 700;
 }
 
-/* Azzurro Mare carries Blu Oceano text at 7.4:1. */
+/* #5F9EA3 is too mid-tone to carry small text, so buttons take the deeper #426F7B. */
 .primary-button {
-  background: var(--sea);
-  color: var(--ocean);
+  background: var(--heading);
+  color: var(--light);
 }
 
 .secondary-button {
-  background: var(--sand);
-  color: var(--ocean);
+  background: var(--surface-2);
+  color: var(--ink);
 }
 
 .hero-media {
@@ -189,12 +193,12 @@ button {
   width: 100%;
   min-height: 100%;
   border-radius: 24px;
-  background: linear-gradient(135deg, #e4f4fa 0%, var(--sand) 100%);
-  border: 1px dashed var(--ocean-faint);
+  background: linear-gradient(135deg, #c4d8d6 0%, var(--bg) 100%);
+  border: 1px dashed var(--natural);
   display: grid;
   place-items: center;
   text-align: center;
-  color: var(--ocean);
+  color: var(--ink);
 }
 
 .hero-placeholder {
@@ -210,7 +214,7 @@ button {
   display: block;
   margin-top: 10px;
   font-size: 14px;
-  color: var(--ocean-muted);
+  color: var(--ink-muted);
 }
 
 .search-panel {
@@ -233,7 +237,7 @@ button {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: var(--salt);
+  background: var(--surface);
   padding: 14px 16px;
 }
 
@@ -254,7 +258,7 @@ button {
 .tour-card {
   overflow: hidden;
   border-radius: 24px;
-  background: var(--salt);
+  background: var(--surface);
   border: 1px solid var(--line);
 }
 
@@ -266,7 +270,7 @@ button {
 
 .tour-image-placeholder span {
   font-size: 14px;
-  color: var(--ocean-muted);
+  color: var(--ink-muted);
 }
 
 .tour-card-body {
@@ -287,14 +291,14 @@ button {
 
 .tour-description {
   margin: 0 0 14px;
-  color: var(--ocean-muted);
+  color: var(--ink-muted);
 }
 
-/* Blu Oceano closes the page. */
+/* #426F7B closes the page. */
 .site-footer {
-  background: var(--ocean);
+  background: var(--heading);
   border-color: transparent;
-  color: rgba(244, 230, 204, 0.85);
+  color: var(--light);
   width: min(1120px, calc(100% - 32px));
   margin: 24px auto 120px;
   padding: 20px 24px;
@@ -313,8 +317,8 @@ button {
 
 .list-button {
   border: 1px solid var(--line);
-  background: var(--salt);
-  color: var(--ocean);
+  background: var(--surface);
+  color: var(--heading);
   font-weight: 700;
   border-radius: 999px;
   padding: 10px 18px;
@@ -328,8 +332,8 @@ button {
   height: 22px;
   padding: 0 6px;
   border-radius: 999px;
-  background: var(--sea);
-  color: var(--ocean);
+  background: var(--heading);
+  color: var(--light);
   font-size: 13px;
   display: grid;
   place-items: center;
@@ -357,8 +361,8 @@ button {
 }
 
 .tour-card.is-saved {
-  border-color: var(--mint);
-  box-shadow: 0 0 0 2px rgba(166, 232, 187, 0.75);
+  border-color: var(--detail);
+  box-shadow: 0 0 0 2px rgba(95, 158, 163, 0.4);
 }
 
 .tour-image-placeholder {
@@ -371,15 +375,15 @@ button {
   right: 12px;
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--ocean);
+  background: var(--surface);
+  color: var(--ink);
   font-size: 13px;
   font-weight: 700;
 }
 
 .tour-card.is-saved .tour-save-badge {
-  background: var(--mint);
-  color: var(--ocean);
+  background: var(--heading);
+  color: var(--light);
 }
 
 /* ----------------------------------------------------- bottom price bar */
@@ -390,7 +394,7 @@ button {
   right: 0;
   bottom: 0;
   z-index: 40;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(244, 240, 232, 0.96);
   backdrop-filter: blur(8px);
   border-top: 1px solid var(--line);
   box-shadow: 0 -10px 30px var(--shadow);
@@ -419,18 +423,18 @@ button {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ocean-muted);
+  color: var(--ink-muted);
 }
 
 .booking-price-value {
   font-size: 28px;
   font-weight: 800;
-  color: var(--ocean);
+  color: var(--ink);
 }
 
 .booking-price-count {
   font-size: 13px;
-  color: var(--ocean-muted);
+  color: var(--ink-muted);
   font-weight: 700;
 }
 
@@ -438,8 +442,8 @@ button {
   flex: 1;
   padding: 16px 24px;
   font-size: 17px;
-  background: var(--coral);
-  color: var(--ocean);
+  background: var(--heading);
+  color: var(--light);
 }
 
 /* --------------------------------------------- postcard-back saved list */
@@ -456,7 +460,7 @@ button {
 .postcard-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(31, 58, 95, 0.55);
+  background: rgba(44, 74, 82, 0.55);
 }
 
 .postcard {
@@ -470,9 +474,9 @@ button {
   border-radius: 8px;
   color: var(--postcard-ink);
   background-color: var(--postcard-paper);
-  background-image: radial-gradient(rgba(31, 58, 95, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(44, 74, 82, 0.06) 1px, transparent 1px);
   background-size: 4px 4px;
-  box-shadow: 0 30px 70px rgba(31, 58, 95, 0.4);
+  box-shadow: 0 30px 70px rgba(44, 74, 82, 0.4);
 }
 
 /* The thin frame printed on the back of a real postcard. */
@@ -480,7 +484,7 @@ button {
   content: '';
   position: absolute;
   inset: 10px;
-  border: 1px solid rgba(31, 58, 95, 0.18);
+  border: 1px solid rgba(44, 74, 82, 0.18);
   border-radius: 4px;
   pointer-events: none;
 }
@@ -505,7 +509,7 @@ button {
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(31, 58, 95, 0.55);
+  color: rgba(44, 74, 82, 0.55);
 }
 
 .postcard-stamp-area {
@@ -527,9 +531,9 @@ button {
   align-items: center;
   justify-content: center;
   gap: 3px;
-  background: linear-gradient(170deg, var(--salt) 0%, #fff4ea 100%);
-  color: var(--ocean);
-  box-shadow: inset 0 0 0 1px rgba(255, 111, 97, 0.28);
+  background: linear-gradient(170deg, var(--light) 0%, #e6ded0 100%);
+  color: var(--heading);
+  box-shadow: inset 0 0 0 1px rgba(95, 158, 163, 0.35);
   transform: rotate(3deg);
 }
 
@@ -559,7 +563,7 @@ button {
   font-size: 7px;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: rgba(31, 58, 95, 0.65);
+  color: rgba(44, 74, 82, 0.65);
 }
 
 /* Ink postmark, stamped across the lower-left corner of the stamp. */
@@ -570,7 +574,7 @@ button {
   z-index: 1;
   width: 64px;
   height: 64px;
-  border: 2px solid rgba(31, 58, 95, 0.4);
+  border: 2px solid var(--accent);
   border-radius: 50%;
   display: grid;
   place-content: center;
@@ -580,7 +584,7 @@ button {
   font-size: 7px;
   font-weight: 800;
   letter-spacing: 0.14em;
-  color: rgba(31, 58, 95, 0.5);
+  color: var(--accent);
   transform: rotate(-12deg);
   mix-blend-mode: multiply;
 }
@@ -588,7 +592,7 @@ button {
 .postcard-postmark-rule {
   width: 34px;
   height: 1px;
-  background: rgba(31, 58, 95, 0.4);
+  background: var(--accent);
 }
 
 .postcard-grid {
@@ -613,7 +617,7 @@ button {
 
 .postcard-empty {
   margin: 0;
-  color: rgba(31, 58, 95, 0.6);
+  color: rgba(44, 74, 82, 0.6);
 }
 
 .postcard-lines {
@@ -637,7 +641,7 @@ button {
 .postcard-leader {
   flex: 1;
   min-width: 30px;
-  border-bottom: 1.5px dotted rgba(31, 58, 95, 0.4);
+  border-bottom: 1.5px dotted rgba(44, 74, 82, 0.4);
   transform: translateY(-5px);
 }
 
@@ -651,7 +655,7 @@ button {
   padding: 0 2px;
   font-size: 15px;
   line-height: 1;
-  color: var(--coral);
+  color: var(--heading);
 }
 
 .postcard-clear {
@@ -661,14 +665,14 @@ button {
   padding: 0;
   font-family: var(--handwriting);
   font-size: 19px;
-  color: rgba(31, 58, 95, 0.55);
-  border-bottom: 1px dotted rgba(31, 58, 95, 0.4);
+  color: rgba(44, 74, 82, 0.55);
+  border-bottom: 1px dotted rgba(44, 74, 82, 0.4);
 }
 
 /* The address half, with its dividing rule and ruled writing lines. */
 .postcard-address {
   padding-left: 22px;
-  border-left: 1.5px solid rgba(31, 58, 95, 0.25);
+  border-left: 1.5px solid var(--neutral);
 }
 
 .postcard-address-label {
@@ -676,7 +680,7 @@ button {
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(31, 58, 95, 0.5);
+  color: rgba(44, 74, 82, 0.5);
 }
 
 .postcard-address-line {
@@ -684,7 +688,7 @@ button {
   padding: 6px 0 4px;
   font-family: var(--handwriting);
   font-size: 22px;
-  border-bottom: 1px solid rgba(31, 58, 95, 0.22);
+  border-bottom: 1px solid var(--neutral);
 }
 
 /* Price and booking button sit together at the foot of the card. */
@@ -694,7 +698,7 @@ button {
   align-items: center;
   gap: 18px;
   padding-top: 14px;
-  border-top: 1.5px solid rgba(31, 58, 95, 0.25);
+  border-top: 1.5px solid rgba(44, 74, 82, 0.25);
 }
 
 .postcard-total {
@@ -703,7 +707,7 @@ button {
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(31, 58, 95, 0.6);
+  color: rgba(44, 74, 82, 0.6);
 }
 
 .postcard-total strong {
@@ -716,7 +720,7 @@ button {
   margin: 18px 0 0;
   font-size: 12px;
   line-height: 1.5;
-  color: rgba(31, 58, 95, 0.55);
+  color: rgba(44, 74, 82, 0.55);
 }
 
 .postcard-actions {
@@ -729,18 +733,18 @@ button {
 
 .postcard-actions .primary-button {
   flex: 1;
-  background: var(--coral);
-  color: var(--ocean);
+  background: var(--heading);
+  color: var(--light);
 }
 
 .postcard-actions .primary-button:disabled {
-  background: rgba(31, 58, 95, 0.2);
-  color: var(--salt);
+  background: rgba(66, 111, 123, 0.28);
+  color: var(--light);
   cursor: not-allowed;
 }
 
 .postcard-close {
-  border: 1px solid rgba(31, 58, 95, 0.3);
+  border: 1px solid rgba(44, 74, 82, 0.3);
   background: none;
   color: inherit;
   border-radius: 999px;
@@ -788,7 +792,7 @@ button {
     padding-left: 0;
     padding-top: 16px;
     border-left: none;
-    border-top: 1.5px solid rgba(31, 58, 95, 0.25);
+    border-top: 1.5px solid var(--neutral);
   }
 
   .postcard-empty,
