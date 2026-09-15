@@ -793,3 +793,19 @@ button {
     padding: 14px 18px;
   }
 }
+
+.brand-logo {
+  object-fit: contain;
+  display: block;
+}
+
+/* The teal disc is only for the placeholder mark; a real logo sits on paper. */
+.brand-mark.has-logo {
+  background: white;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  overflow: hidden;
+}
+
+.postcard-stamp .brand-logo {
+  border-radius: 2px;
+}

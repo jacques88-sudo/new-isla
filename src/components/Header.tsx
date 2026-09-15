@@ -1,14 +1,16 @@
-import IslaMark from './IslaMark'
+import BrandLogo from './BrandLogo'
+import { useBrandLogo } from '../hooks/useBrandLogo'
 import { useSavedList } from '../state/savedList'
 
 function Header() {
   const { count, open } = useSavedList()
+  const logoStatus = useBrandLogo()
 
   return (
     <header className="site-header">
       <div className="brand">
-        <div className="brand-mark">
-          <IslaMark size={28} />
+        <div className={logoStatus === 'ready' ? 'brand-mark has-logo' : 'brand-mark'}>
+          <BrandLogo size={logoStatus === 'ready' ? 44 : 28} />
         </div>
         <div>
           <p className="brand-name">Isla Adventures</p>

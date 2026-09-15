@@ -1,8 +1,10 @@
 import { useSavedList } from '../state/savedList'
-import IslaMark from './IslaMark'
+import BrandLogo from './BrandLogo'
+import { useBrandLogo } from '../hooks/useBrandLogo'
 
 function PostcardList() {
   const { items, total, isOpen, remove, clear, close } = useSavedList()
+  const logoStatus = useBrandLogo()
 
   if (!isOpen) {
     return null
@@ -24,9 +26,14 @@ function PostcardList() {
               <span>CANARIAS</span>
             </div>
             <div className="postcard-stamp">
-              <IslaMark size={36} />
-              <span className="postcard-stamp-name">ISLA</span>
-              <span className="postcard-stamp-value">ADVENTURES</span>
+              <BrandLogo size={logoStatus === 'ready' ? 58 : 36} />
+              {/* The real logo carries the name already. */}
+              {logoStatus !== 'ready' && (
+                <>
+                  <span className="postcard-stamp-name">ISLA</span>
+                  <span className="postcard-stamp-value">ADVENTURES</span>
+                </>
+              )}
             </div>
           </div>
         </div>
