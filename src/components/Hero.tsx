@@ -6,12 +6,9 @@ function Hero() {
         <h1>Build Isla again, with your own logo, images, and video.</h1>
         <p className="hero-text">
           This starter replaces the Lovable repository with a clean base that you can fully control on
-          GitHub.
+          GitHub. Tap a tour you like and it goes straight to your list — the price and the booking
+          button stay down at the bottom of the screen.
         </p>
-        <div className="hero-actions">
-          <button className="primary-button">Explore tours</button>
-          <button className="secondary-button">Upload your assets</button>
-        </div>
       </div>
       <div className="hero-media">
         <div className="hero-placeholder">
