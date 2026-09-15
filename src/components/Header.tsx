@@ -10,7 +10,7 @@ function Header() {
     <header className="site-header">
       <div className="brand">
         <div className={logoStatus === 'ready' ? 'brand-mark has-logo' : 'brand-mark'}>
-          <BrandLogo size={logoStatus === 'ready' ? 44 : 28} />
+          <BrandLogo size={logoStatus === 'ready' ? 52 : 28} />
         </div>
         <div>
           <p className="brand-name">Isla Adventures</p>

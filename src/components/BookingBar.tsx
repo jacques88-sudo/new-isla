@@ -13,7 +13,9 @@ function BookingBar() {
         <button type="button" className="booking-price" onClick={open}>
           <span className="booking-price-label">{hasItems ? 'Your list' : 'From'}</span>
           <span className="booking-price-value">€{hasItems ? total : lowestPrice}</span>
-          {hasItems && <span className="booking-price-count">{count} tours</span>}
+          {hasItems && (
+            <span className="booking-price-count">{count === 1 ? '1 tour' : `${count} tours`}</span>
+          )}
         </button>
         <button type="button" className="primary-button booking-cta" onClick={open}>
           Book now

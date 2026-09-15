@@ -55,7 +55,7 @@ button {
 .site-header {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 20px 0 8px;
+  padding: 20px 0 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -508,9 +508,9 @@ button {
   align-items: center;
   justify-content: center;
   gap: 3px;
-  background: linear-gradient(170deg, #eaf6f3 0%, #fdf6e4 100%);
+  background: linear-gradient(170deg, #fffaf0 0%, #ffeede 100%);
   color: #0f766e;
-  box-shadow: inset 0 0 0 1px rgba(15, 118, 110, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(194, 65, 12, 0.16);
   transform: rotate(3deg);
 }
 
@@ -799,11 +799,11 @@ button {
   display: block;
 }
 
-/* The teal disc is only for the placeholder mark; a real logo sits on paper. */
+/* The teal disc is only for the placeholder mark; the real logo stands alone. */
 .brand-mark.has-logo {
-  background: white;
-  border: 1px solid rgba(148, 163, 184, 0.3);
-  overflow: hidden;
+  width: 52px;
+  height: 52px;
+  background: none;
 }
 
 .postcard-stamp .brand-logo {
